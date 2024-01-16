@@ -1,28 +1,23 @@
 import React, { useState } from 'react';
 
+const Greetings = () => {
+  const [name, setName] = useState('');
 
-const Greeting = () => {
-    const [name, setName] = useState('');
-    const [greeting, setGreeting] = useState('');
-  
-    const handleNameChange = (event) => {
-      setName(event.target.value);
-    };
-  
-    const handleGreet = () => {
-      setGreeting(`Hello, ${name}!`);
-    };
-  
-    return (
-      <div>
-        <label>
-          Enter your name: 
-          <input type="text" value={name} onChange={handleNameChange} />
-        </label>
-        <button onClick={handleGreet}>Greet</button>
-        {greeting && <p>{greeting}</p>}
-      </div>
-    );
+  const handleNameChange = (event) => {
+    setName(event.target.value);
   };
 
-  export default Greeting;
+  const greeting = name ? `Hello ${name}!` : '';
+
+  return (
+    <div>
+      <label>
+        Enter your name: 
+        <input type="text" value={name} onChange={handleNameChange} />
+      </label>
+      {greeting && <p>{greeting}</p>}
+    </div>
+  );
+};
+
+export default Greetings;
