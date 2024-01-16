@@ -1,16 +1,16 @@
 
 import React, { useState } from "react";
 import './../styles/App.css';
+import Greetings from  './greeting' ;              //import GreetingForm from './GreetingForm';
 
 const App = () => {
-  let [count,setCount] = useState(0);
 
   return (
     <div>
-       <p>Button Clicked {count} times</p>
-       <button onClick={()=>setCount(count+1)}>Click Me</button>
-    </div>
-  )
+    <h1>Personalized Greeting App</h1>
+    <Greetings />
+  </div>
+  );
 }
 
 export default App
