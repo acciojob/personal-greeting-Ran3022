@@ -15,7 +15,7 @@ const Greetings = () => {
         Enter your name: 
         <input type="text" value={name} onChange={handleNameChange} />
       </label>
-      {greeting && <p>{greeting}</p>}
+      <p>{greeting}</p>
     </div>
   );
 };
